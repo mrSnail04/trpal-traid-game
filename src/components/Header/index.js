@@ -1,8 +1,9 @@
 import React from "react";
 import style from './Header.module.css';
 
+const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
+
 const Header = () => {
-    const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
     return (
         <header className={style.root}>
             <div className={style.header}>
