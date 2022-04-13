@@ -28,7 +28,11 @@
 }
 
 .nav {
+    height: 70px;
+    width: calc(100% - 125px);
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -63,9 +67,9 @@
     font-size: 16px;
 }
 
-.headerWrap {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/*.headerWrap {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/

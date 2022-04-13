@@ -12,15 +12,17 @@ function App() {
       <Slider />
       <div>
           <Container>
-              <Text element={"div"} disable={true}>
-                  ТЕКСТ 1
-              </Text>
-              <Text element={"p"} italic strong>
-                  ТЕКСТ 2
-              </Text>
-              <Text element={"span"} strong>
-                  ТЕКСТ 3
-              </Text>
+              <div>
+                  <Text element={"div"} disable={true}>
+                      ТЕКСТ 1
+                  </Text>
+                  <Text element={"p"} italic strong>
+                      ТЕКСТ 2
+                  </Text>
+                  <Text element={"span"} strong>
+                      ТЕКСТ 3
+                  </Text>
+              </div>
           </Container>
       </div>
       <Footer />
