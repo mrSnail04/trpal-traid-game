@@ -89,3 +89,20 @@
         margin: 0 8px;
     }
 }
+
+.image{
+    /*background-image: url(../../assets/logo.png);*/
+    width: 320px;
+    height: 180px;
+    display: flex;
+
+}
+.image svg g{
+    transition: all .25s ease-in-out;
+}
+
+
+.image:hover svg g{
+    fill: pink;
+
+}
