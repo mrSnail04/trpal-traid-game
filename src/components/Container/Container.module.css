@@ -1,6 +1,4 @@
 .root {
-    display: flex;
-    align-items: center;
     position: relative;
     margin: 0 50px;
     color: #444;

@@ -22,17 +22,14 @@
 }
 
 .logo {
+    display: flex;
     height: 70px;
     width: 125px;
-    display: flex;
+
 }
 
 .nav {
-    height: 70px;
-    width: calc(100% - 125px);
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -66,10 +63,3 @@
 .header.small .nav  {
     font-size: 16px;
 }
-
-/*.headerWrap {*/
-/*    width: 100%;*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*}*/
