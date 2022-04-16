@@ -3,7 +3,7 @@ import React from "react";
 import logoPng from "../../assets/logo.png"
 import Heading from "../Heading";
 import Container from "../Container";
-import s from './Slider.module.css';
+import s from './Slider.module.scss';
 
 const Slider = () => {
     return (
@@ -14,7 +14,7 @@ const Slider = () => {
                         Это Заголовок!
                     </Heading>
                     <Heading level={2}>
-                        Wow.Wow.Wow
+                        wow wow wow
                     </Heading>
                     <div className={s.image}>
                         <img src={logoPng} alt="Logo"/>
