@@ -13,7 +13,7 @@ function App() {
       <div>
           <Container>
               <div>
-                  <Text element={"div"} disable={true}>
+                  <Text element={"div"} disable>
                       ТЕКСТ 1
                   </Text>
                   <Text element={"p"} italic strong>

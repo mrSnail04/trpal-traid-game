@@ -16,16 +16,16 @@ const Text = ({
         className: cn(
             s.root,
             className,
-            s[`${element}`],
-            {[s.disable]:disable},
-            {[s.strong]:strong},
-            {[s.italic]:italic},
+            s[`${el}`],
+            {[s.disable]:disable,
+            [s.strong]:strong,
+            [s.italic]:italic},
             )
     }, children);
 };
 
 Text.propTypes = {
-    element: PropTypes.oneOf(['div', 'p', 'span']),
+    element: PropTypes.oneOf(['div', 'p', 'span']).isRequired,
     children: PropTypes.node,
     className: PropTypes.string,
     strong: PropTypes.bool,
