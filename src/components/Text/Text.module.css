@@ -1,0 +1,15 @@
+.root{
+    background: #f7f7f7;
+}
+.strong{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.disable{
+    opacity: .3;
+    cursor: not-allowed;
+}

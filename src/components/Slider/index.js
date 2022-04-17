@@ -1,17 +1,28 @@
 import React from "react";
-import style from './Slider.module.css';
+
+import logoPng from "../../assets/logo.png"
+import Heading from "../Heading";
+import Container from "../Container";
+import s from './Slider.module.css';
 
 const Slider = () => {
     return (
-        <section className={style.section}>
-            <div className={style.slider}>
-                <div className={style.container + ' '+ style.sliderContent}>
-                    <h1 className={style.header}>Wow</h1>
-                    <h2 className={style.subheader}>Wow.Wow.Wow</h2>
-                    <div className={style.call}>
-                        <button className={style.button}>Wow</button>
+        <section className={s.section}>
+            <div className={s.slider}>
+                <Container className={s.sliderContent}>
+                    <Heading level={1}>
+                        Это Заголовок!
+                    </Heading>
+                    <Heading level={2}>
+                        Wow.Wow.Wow
+                    </Heading>
+                    <div className={s.image}>
+                        <img src={logoPng} alt="Logo"/>
                     </div>
-                </div>
+                    <div className={s.call}>
+                        <button className={s.button}>Wow</button>
+                    </div>
+                </Container>
             </div>
         </section>
     )
