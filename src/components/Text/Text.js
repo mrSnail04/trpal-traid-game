@@ -16,10 +16,10 @@ const Text = ({
         className: cn(
             s.root,
             className,
-            s[`${element}`],
-            {[s.disable]:disable},
-            {[s.strong]:strong},
-            {[s.italic]:italic},
+            s[`${el}`],
+            {[s.disable]:disable,
+            [s.strong]:strong,
+            [s.italic]:italic},
             )
     }, children);
 };
