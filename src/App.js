@@ -5,8 +5,10 @@ import Slider from "./components/Slider";
 import Container from "./components/Container";
 import Heading from "./components/Heading";
 import CharacterCard from "./components/CharacterCard";
+import Biography from "./pages/Biography";
 
 import s from './App.module.scss';
+
 
 const CHARACTERS = [
     {
@@ -73,9 +75,9 @@ const CHARACTERS = [
 
 function App() {
     const [characters, setCharacters] = useState(CHARACTERS);
-
+    const [bio, setBio] = useState(false);
+    const [id, setId] =useState(undefined)
     const handleLikeClick = (id) => {
-
         setCharacters((prevState) =>prevState.map(item =>{
             if (item.id===id){
                 return {
@@ -87,17 +89,26 @@ function App() {
         }));
     };
 
-    return (
+    const handleBiographyClick = (id) => {
+        setId(id);
+        setBio(true);
+
+    };
+    const handleBackClick = () => {
+        setBio(false);
+    }
+
+    if (!bio) return (
         <>
             <Header/>
             <Slider/>
             <section className={s.cardSection}>
                 <Container>
                     <div className={s.cardTitle}>
-                        <Heading backLine>
+                        <Heading backLine black>
                             Marvel Cards
                         </Heading>
-                        <Heading level={2}>
+                        <Heading level={2} black>
                             Collect your best five
                         </Heading>
                     </div>
@@ -114,6 +125,7 @@ function App() {
                                             humanName={item.humanName}
                                             isLike={item.isLike}
                                             onLikeClick={handleLikeClick}
+                                            onBiographyClick={handleBiographyClick}
                                         />
                                     </div>
                                 )
@@ -124,6 +136,17 @@ function App() {
             </section>
             <Footer/>
         </>
+    );
+    else
+        return (
+            <>
+                <Header/>
+                <Biography
+                    id={id}
+                    onBackClick={handleBackClick}
+                />
+                <Footer/>
+            </>
     );
 }
 

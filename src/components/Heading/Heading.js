@@ -8,7 +8,7 @@ import s from './Heading.module.scss';
 const Heading = ({
         level = 1,
         className,
-        black = false,
+        black,
         children,
         backLine,
 }) =>{
@@ -18,15 +18,17 @@ const Heading = ({
         className: cn(
             s.root,
             className,
-            s[`level${level}`],{
-            [s.backline]:backLine
-        } )
+            s[`level${level}`],
+            {[s.backline]:backLine},
+            {[s.colorBlack]:black},
+            )
     }, children);
 };
 
 Heading.defaultProps ={
     level: 1,
     backLine: false,
+    black: false,
 }
 Heading.propTypes = {
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,

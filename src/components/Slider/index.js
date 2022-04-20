@@ -3,6 +3,7 @@ import React from "react";
 import logoPng from "../../assets/logo.png"
 import Heading from "../Heading";
 import Container from "../Container";
+import Button from "../Button";
 import s from './Slider.module.scss';
 
 const Slider = () => {
@@ -20,7 +21,7 @@ const Slider = () => {
                         <img src={logoPng} alt="Logo"/>
                     </div>
                     <div className={s.call}>
-                        <button className={s.button}>Wow</button>
+                        <Button name={"wow"}/>
                     </div>
                 </Container>
             </div>
