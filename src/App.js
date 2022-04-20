@@ -4,11 +4,11 @@ import Footer from "./components/Footer";
 import Slider from "./components/Slider";
 import Container from "./components/Container";
 import Heading from "./components/Heading";
-import ChapterCard from "./components/ChapterCard";
+import CharacterCard from "./components/CharacterCard";
 
 import s from './App.module.scss';
 
-const CHAPTER = [
+const CHARACTERS = [
     {
         "id": 1011334,
         "name": "Spider-Man",
@@ -72,19 +72,19 @@ const CHAPTER = [
 ];
 
 function App() {
-    const [chapter, setChapter] = useState(CHAPTER);
+    const [characters, setCharacters] = useState(CHARACTERS);
 
     const handleLikeClick = (id) => {
-        const newChapter = chapter.map((item)=>{
+
+        setCharacters((prevState) =>prevState.map(item =>{
             if (item.id===id){
-                item.isLike = !item.isLike
-                return item
+                return {
+                    ...item,
+                    isLike: !item.isLike,
+                };
             }
-            else{
-                return item
-            }
-        }, id);
-        setChapter(newChapter)
+            return item;
+        }));
     };
 
     return (
@@ -103,10 +103,10 @@ function App() {
                     </div>
                     <div className={s.cardWrap}>
                         {
-                            chapter.map(item=> {
+                            characters.map(item=> {
                                 return(
                                     <div key={item.id}>
-                                        <ChapterCard
+                                        <CharacterCard
                                             id={item.id}
                                             name={item.name}
                                             src={item.thumbnail.path}

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Heading from "../Heading";
 import Text from "../Text";
 import cn from 'classnames';
-import s from './ChapterCard.module.scss';
+import s from './CharacterCard.module.scss';
 
 import {ReactComponent as Like} from "./assets/heart.svg";
 
 
-const ChapterCard = ({
+const CharacterCard = ({
     id,
     name,
     src,
@@ -55,11 +55,11 @@ const ChapterCard = ({
     );
 };
 
-ChapterCard.defaultProps ={
+CharacterCard.defaultProps ={
     isLike:false
 }
 
-ChapterCard.prototype = {
+CharacterCard.prototype = {
     id: PropTypes.number,
     name: PropTypes.string,
     src: PropTypes.string,
@@ -69,4 +69,4 @@ ChapterCard.prototype = {
     onLikeClick: PropTypes.func,
 }
 
-export default ChapterCard;
+export default CharacterCard;
