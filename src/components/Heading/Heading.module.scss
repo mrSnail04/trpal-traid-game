@@ -1,0 +1,51 @@
+.root{
+    margin-bottom: 0.5em;
+    padding: 0;
+    color: #FFFFFF;
+
+    &.backline {
+        text-align: center;
+        &::after {
+            content: "";
+            display: block;
+            width: 10%;
+            position: relative;
+            border-bottom: 1px solid #aaa;
+            margin: 15px auto 0;
+        }
+     }
+}
+
+.colorBlack{
+    color:#000000;
+}
+
+.level1{
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.23;
+}
+
+.level2{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.35;
+}
+
+.level3{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.35;
+}
+
+.level4{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.level5{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+}
