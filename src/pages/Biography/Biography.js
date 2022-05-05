@@ -1,67 +1,44 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
-import Button from "../../components/Button";
+import {useParams} from "react-router-dom";
 import Text from "../../components/Text";
 import Container from "../../components/Container";
-import {BIO} from "./BIO"
+import { BIO } from "./BIO"
 import Heading from "../../components/Heading";
 
 import s from './Biography.module.scss';
 
-
-const Biography = ({
-               id,
-               onBackClick,
-}) => {
-    const handleBack = () => {
-        onBackClick();
-    };
-    let biography = BIO[id]
+const Biography = () => {
+    const {id} = useParams();
 
     return(
         <section className={cn(s.root, s.biographySection)}>
             <Container>
-                <div className={cn(s.root, s.backButton)}>
-                    <Button onClick={handleBack} name={"Go back"} black/>
-                </div>
                 {
-                    biography.map((item,i) => {
-                        let tag;
+                    BIO[id].map((item,i) => {
                         switch (item.type) {
                             case 'h1':
-                                tag = <Heading black>{item.text}</Heading>
-                                break;
+                                return <Heading key={i} black>{item.text}</Heading>
                             case 'h2':
-                                tag = <Heading black level={2}>{item.text}</Heading>
-                                break;
+                                return <Heading key={i} black level={2}>{item.text}</Heading>
                             case 'paragraph':
-                                tag = <Text element={"p"}>{item.text}</Text>
-                                break;
+                                return <Text key={i} element={"p"}>{item.text}</Text>
                             case 'img':
-                                tag = <div className={s.root}>
-                                    <img src={item.src} alt={'Изображение героя'}></img>
+                                return <div key={i} className={s.root}>
+                                    <img src={item.src} alt={"Изображение героя"} />
                                     </div>
-                                break;
                             default:
-                                break;
+                                return <Text element={"div"} key={i}>{item.text}</Text>
                         }
-                        return(
-                            <React.Fragment key={i}>{tag}</React.Fragment>
-                        )
                     })
                 }
             </Container>
         </section>
-)};
-
-Biography.propTypes = {
-    id: PropTypes.number,
-    onBackClick: PropTypes.func,
+    );
 };
 
-Biography.defaultProps = {
+Biography.propTypes = {};
 
-};
+Biography.defaultProps = {};
 
 export default Biography;

@@ -1,0 +1,24 @@
+.root{
+  display:flex;
+  justify-content: center;
+  background: #f7f7f7;
+}
+.contactWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 12px;
+}
+.img{
+  margin: 20px auto;
+  height: 400px;
+  border-radius: 100%;
+}
+.imgIcon{
+  height: 30px;
+  padding-right: 12px;
+
+}
+.contact{
+  display: flex;
+  align-items: center;
+}
