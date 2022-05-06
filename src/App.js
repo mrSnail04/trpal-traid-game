@@ -1,21 +1,48 @@
-import React from "react";
-import {Routes, Route} from "react-router-dom";
+import React, {useEffect} from "react";
+import {Routes, Route, useLocation} from "react-router-dom";
 import Main from "./pages/Main";
 import Biography from "./pages/Biography";
 import Layout from "./components/Layout";
-import {Characters} from "./components/Characters/Characters";
+import {Characters} from "./pages/Characters/Characters";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
+import NotFound from "./pages/NotFound";
+
 
 function App() {
+    const {pathname, hash} = useLocation();
+    useEffect(() => {
+        if (hash) {
+
+            // Нагуглил такой вариант при котором заголовок не будет уходить за navBar.
+
+            const element = document.getElementById(hash.slice(1))
+            const elementRect = element.getBoundingClientRect(); //Возвращает DOMReact объект с размерами
+            const absoluteElementTop = elementRect.top + window.pageYOffset;
+            const position = absoluteElementTop - (window.innerHeight * 0.06);
+            window.scrollTo(0, position);
+
+            //Вариант как в уроке.
+
+            // element.scrollIntoView({
+            //     block: "center",
+            //     behavior: "smooth",
+            // });
+
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [pathname, hash]);
+
     return (
         <Routes>
             <Route path="/" element={<Layout/>}>
                 <Route index element={<Main/>}/>
                 <Route path="characters" element={<Characters/>}/>
-                <Route path="bio/:id" element={<Biography/>}/>
+                <Route path="characters/:id" element={<Biography/>}/>
                 <Route path="contacts" element={<Contacts/>}/>
                 <Route path="about" element={<About/>}/>
+                <Route path="*" element={<NotFound/>} />
             </Route>
         </Routes>
     );

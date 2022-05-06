@@ -1,13 +1,27 @@
 import Header from "../Header";
 import React from "react";
-import {Outlet} from "react-router-dom";
+import {Outlet, useMatch} from "react-router-dom";
 import Footer from "../Footer";
+import Container from "../Container";
+
+import s from "./Layout.module.scss";
+
 
 const Layout = () => {
+    const match =useMatch({ path: '/'});
     return(
         <>
             <Header/>
-            <Outlet/>
+            {
+                match !== null? <Outlet /> : (
+                    <div className={s.container}>
+                        <Container>
+                            <Outlet/>
+                        </Container>
+                    </div>
+                )
+            }
+
             <Footer/>
         </>
 

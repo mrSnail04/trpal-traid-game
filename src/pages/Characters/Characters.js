@@ -1,8 +1,8 @@
-import Container from "../Container";
-import Heading from "../Heading";
-import CharacterCard from "../CharacterCard";
+import Container from "../../components/Container";
+import Heading from "../../components/Heading";
+import CharacterCard from "../../components/CharacterCard";
 import React, {useState} from "react";
-import {CHARACTERS} from "../../pages/Biography/characters";
+import {CHARACTERS} from "../Biography/characters";
 import {useNavigate} from "react-router-dom";
 
 import s from "./Characters.module.scss";
@@ -11,7 +11,6 @@ import s from "./Characters.module.scss";
 export const Characters = () => {
 
     const [characters, setCharacters] = useState(CHARACTERS);
-    const [id, setId] = useState(undefined)
     const navigate = useNavigate();
 
     const handleLikeClick = (id) => {
@@ -25,11 +24,10 @@ export const Characters = () => {
             return item;
         }));
     };
-
     const handleBiographyClick = (id) => {
-        setId(id);
-        navigate(`/bio/${id}`);
+        navigate(`/characters/${id}`);
     };
+
     return(
         <section className={s.cardSection}>
             <Container>

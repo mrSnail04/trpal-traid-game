@@ -5,10 +5,20 @@
 
 .biographySection {
   padding: 24px 0;
-  background: #f7f7f7;
+  background: #FFFFFF;
 }
 
 .backButton{
   margin-bottom: 20px;
+}
+.img{
+  width:20px;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  &:hover{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
 }
 

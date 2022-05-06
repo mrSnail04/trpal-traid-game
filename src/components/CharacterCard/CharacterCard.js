@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import Heading from "../Heading";
 import Text from "../Text";
 import cn from 'classnames';
-import s from './CharacterCard.module.scss';
-
 import {ReactComponent as Like} from "./assets/heart.svg";
 
+import s from './CharacterCard.module.scss';
 
 const CharacterCard = ({
     id,
@@ -19,7 +18,7 @@ const CharacterCard = ({
     onBiographyClick,
 }) => {
     const handleClick = () => {
-        onLikeClick(id);
+        onLikeClick &&onLikeClick(id);
     };
     const handleBiography = () => {
         onBiographyClick(id);
@@ -51,9 +50,9 @@ const CharacterCard = ({
                         <Like className={s.like}/>
                     </div>
                     <div
-                        onClick={handleBiography}
+
                         className={s.readBio}>
-                        <a href="#">Read bio</a>
+                        <span className={s.span} onClick={handleBiography}>Read bio</span>
                     </div>
                 </div>
             </div>

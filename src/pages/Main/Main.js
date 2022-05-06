@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "../../components/Slider";
-import {Characters} from "../../components/Characters/Characters";
+import {Characters} from "../Characters/Characters";
 
 
 const Main = () => {

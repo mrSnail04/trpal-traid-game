@@ -11,6 +11,7 @@ const Heading = ({
         black,
         children,
         backLine,
+        id,
 }) =>{
     const el = `h${level}`;
 
@@ -21,7 +22,8 @@ const Heading = ({
             s[`level${level}`],
             {[s.backline]:backLine},
             {[s.colorBlack]:black},
-            )
+            ),
+        id:id,
     }, children);
 };
 
@@ -36,6 +38,7 @@ Heading.propTypes = {
     black: PropTypes.bool,
     children: PropTypes.node,
     backLine: PropTypes.bool,
+    id: PropTypes.string,
 };
 
 export default Heading;
