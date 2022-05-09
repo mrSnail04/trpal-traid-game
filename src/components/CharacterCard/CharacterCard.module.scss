@@ -109,3 +109,10 @@
     }
   }
 }
+.span{
+  color: #0f0f0f;
+  &:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
