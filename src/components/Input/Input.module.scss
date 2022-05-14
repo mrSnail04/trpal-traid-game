@@ -1,3 +1,4 @@
+.inputReg,
 .inputLog {
   outline: none;
   z-index: 1;
@@ -10,37 +11,55 @@
   font-size: 24px;
   font-weight: 400;
 }
+.inputReg {
+  color: #FFFFFF;
+}
+.inputLog{
+   color: #212121;
+ }
+.inputReg ~ label,
+.inputLog ~ label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 60px;
+  transition: 0.2s ease;
+}
+.inputLog ~ label {
+  color: #757575;
+}
+.inputReg ~ label {
+  color: rgba(255, 255, 255, 0.8);
+}
+.inputReg:focus ~ label,
+.inputLog:focus ~ label {
+  transform: translate(-12%, -50%) scale(0.75);
+}
 .inputLog:focus ~ label {
   color: #9d9d9d;
+}
+.inputReg:focus ~ label {
+  color: #ffffff;
+}
+.inputReg:valid ~ label,
+.inputLog:valid ~ label {
   transform: translate(-12%, -50%) scale(0.75);
 }
 .inputLog:valid ~ label {
   color: #9d9d9d;
-  transform: translate(-12%, -50%) scale(0.75);
 }
-.inputLog ~ label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #757575;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 60px;
-  transition: 0.2s ease;
+.inputReg:valid ~ label {
+  color: #ffffff;
 }
-.inputLog:focus ~ .bar:before, .inputLog:focus ~ .bar:after {
+.inputReg:focus ~ .bar:before,
+.inputReg:focus ~ .bar:after,
+.inputLog:focus ~ .bar:before,
+.inputLog:focus ~ .bar:after {
   width: 50%;
 }
-.inputLog ~ label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #757575;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 60px;
-  transition: 0.2s ease;
-}
+.inputReg ~ .bar,
 .inputLog ~ .bar {
   position: absolute;
   left: 0;
@@ -49,74 +68,33 @@
   width: 100%;
   height: 1px;
 }
-.inputLog ~.bar:before, .inputLog ~.bar:after {
+.inputReg ~.bar:before,
+.inputReg ~.bar:after,
+.inputLog ~.bar:before,
+.inputLog ~.bar:after {
   content: "";
   position: absolute;
-  background: #ed2553;
   width: 0;
   height: 2px;
   transition: 0.2s ease;
 }
+.inputLog ~.bar:before,
+.inputLog ~.bar:after {
+  background: #ed2553;
+}
+.inputReg ~.bar:before,
+.inputReg ~.bar:after {
+  background: #FFFFFF;
+}
+.inputReg ~ .bar:before,
 .inputLog ~ .bar:before {
   left: 50%;
 }
+.inputReg ~ .bar:after,
 .inputLog ~ .bar:after {
   right: 50%;
 }
 
-.inputReg {
-  outline: none;
-  z-index: 1;
-  position: relative;
-  background: none;
-  width: 100%;
-  height: 60px;
-  border: 0;
-  color: #FFFFFF;
-  font-size: 24px;
-  font-weight: 400;
-}
-.inputReg:focus ~ label {
-  color: #ffffff;
-  transform: translate(-12%, -50%) scale(0.75);
-}
 
-.inputReg:valid ~ label {
-  color: #ffffff;
-  transform: translate(-12%, -50%) scale(0.75);
-}
-.inputReg ~ label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 60px;
-  transition: 0.2s ease;
-}
-.inputReg ~ .bar {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: #757575;
-  width: 100%;
-  height: 1px;
-}
-.inputReg ~.bar:before, .inputReg ~.bar:after {
-  content: "";
-  position: absolute;
-  background: #FFFFFF;
-  width: 0;
-  height: 2px;
-  transition: 0.2s ease;
-}
-.inputReg:focus ~ .bar:before, .inputReg:focus ~ .bar:after {
-  width: 50%;
-}
-.inputReg ~ .bar:before {
-  left: 50%;
-}
-.inputReg ~ .bar:after {
-  right: 50%;
-}
+
+

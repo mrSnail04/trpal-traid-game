@@ -12,9 +12,11 @@ const Login = () => {
 
     const [isActive, setIsActive] = useState(false);
     const [forms, setForm] = useState({
-        email:"",
-        password:"",
-        repeatPassword:"",
+        loginEmail:"",
+        loginPassword:"",
+        signUpEmail:"",
+        signUpPassword:"",
+        signUpRepeatPassword:"",
     });
     const handleOpenClick = () => {
         setIsActive(true)
@@ -31,26 +33,18 @@ const Login = () => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if (forms.repeatPassword.length > 0){
-            if (forms.password === forms.repeatPassword){
-                console.log('#####:form ',forms)
-                setForm({
-                        email:"",
-                        password:"",
-                        repeatPassword:"",
-                    }
-                )
-            }else {
-                console.log('Пароли не совпадают.')
-            }
-        } else {
+        if (forms.signUpPassword === forms.signUpRepeatPassword){
             console.log('#####:form ',forms)
             setForm({
-                    email:"",
-                    password:"",
-                    repeatPassword:"",
+                    loginEmail:"",
+                    loginPassword:"",
+                    signUpEmail:"",
+                    signUpPassword:"",
+                    signUpRepeatPassword:"",
                 }
             )
+        }else {
+            console.log('Пароли не совпадают.')
         }
     };
 
@@ -75,8 +69,8 @@ const Login = () => {
                                 type='email'
                                 id='#email'
                                 required='required'
-                                name="email"
-                                value={forms.email}
+                                name="loginEmail"
+                                value={forms.loginEmail}
                                 onChange={handleChangeValue}
                             />
                         </div>
@@ -88,8 +82,8 @@ const Login = () => {
                                 type='password'
                                 id='#password'
                                 required='required'
-                                name="password"
-                                value={forms.password}
+                                name="loginPassword"
+                                value={forms.loginPassword}
                                 onChange={handleChangeValue}
                             />
                         </div>
@@ -121,8 +115,8 @@ const Login = () => {
                                 type='email'
                                 id='#signup-email'
                                 required='required'
-                                name="email"
-                                value={forms.email}
+                                name="signUpEmail"
+                                value={forms.signUpEmail}
                                 onChange={handleChangeValue}
                             />
                         </div>
@@ -134,8 +128,8 @@ const Login = () => {
                                 type='password'
                                 id='#signup-password'
                                 required='required'
-                                name="password"
-                                value={forms.password}
+                                name="signUpPassword"
+                                value={forms.signUpPassword}
                                 onChange={handleChangeValue}
                             />
                         </div>
@@ -147,8 +141,8 @@ const Login = () => {
                                 type='password'
                                 id='#signup-repeat-password'
                                 required='required'
-                                name="repeatPassword"
-                                value={forms.repeatPassword}
+                                name="signUpRepeatPassword"
+                                value={forms.signUpRepeatPassword}
                                 onChange={handleChangeValue}
                             />
                         </div>
