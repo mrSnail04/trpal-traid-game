@@ -21,7 +21,7 @@ const Slider = () => {
                         <img src={logoPng} alt="Logo"/>
                     </div>
                     <div className={s.call}>
-                        <Button name={"wow"}/>
+                        <Button name="wow"/>
                     </div>
                 </Container>
             </div>
