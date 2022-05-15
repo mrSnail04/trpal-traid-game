@@ -18,11 +18,23 @@ const Login = () => {
         signUpPassword:"",
         signUpRepeatPassword:"",
     });
+    const resetForms = () => {
+        setForm({
+                loginEmail:"",
+                loginPassword:"",
+                signUpEmail:"",
+                signUpPassword:"",
+                signUpRepeatPassword:"",
+            }
+        )
+    };
     const handleOpenClick = () => {
         setIsActive(true)
+        resetForms();
     };
     const handleCloseClick = () => {
         setIsActive(false)
+        resetForms();
     };
     const handleChangeValue =(event) =>{
         setForm(prevState => ({
@@ -35,14 +47,7 @@ const Login = () => {
         event.preventDefault();
         if (forms.signUpPassword === forms.signUpRepeatPassword){
             console.log('#####:form ',forms)
-            setForm({
-                    loginEmail:"",
-                    loginPassword:"",
-                    signUpEmail:"",
-                    signUpPassword:"",
-                    signUpRepeatPassword:"",
-                }
-            )
+            resetForms()
         }else {
             console.log('Пароли не совпадают.')
         }
