@@ -7,6 +7,7 @@ import {Characters} from "./pages/Characters/Characters";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/LoginFormLayout";
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             const element = document.getElementById(hash.slice(1))
             const elementRect = element.getBoundingClientRect(); //Возвращает DOMReact объект с размерами
             const absoluteElementTop = elementRect.top + window.pageYOffset;
-            const position = absoluteElementTop - (window.innerHeight * 0.06);
+            const position = absoluteElementTop - (window.innerHeight * 0.25);
             window.scrollTo(0, position);
 
             //Вариант как в уроке.
@@ -42,8 +43,10 @@ function App() {
                 <Route path="characters/:id" element={<Biography/>}/>
                 <Route path="contacts" element={<Contacts/>}/>
                 <Route path="about" element={<About/>}/>
+
                 <Route path="*" element={<NotFound/>} />
             </Route>
+            <Route path="login" element={<Login/>} />
         </Routes>
     );
 }

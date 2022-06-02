@@ -28,10 +28,11 @@ const Header = () => {
     const [NavBarSmall, setNavBarSmall] = useState(null);
     const navigate = useNavigate();
 
-    const handleScrolly = () => {
-        window.scrollY > 60 ? setNavBarSmall(s.small) : setNavBarSmall(null)
-    };
+    
     useEffect(() => {
+        const handleScrolly = () => {
+            window.scrollY > 60 ? setNavBarSmall(s.small) : setNavBarSmall(null)
+        };
         window.addEventListener(`scroll`, handleScrolly)
         return () => {window.removeEventListener(`scroll`, handleScrolly)}
     });

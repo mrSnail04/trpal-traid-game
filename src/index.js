@@ -10,7 +10,6 @@ import App from './App';
 
 ReactDOM.render(
     <BrowserRouter>
-        {/*<ScrollToTop/>*/}
         <App />
     </BrowserRouter>,
     document.getElementById('root'))

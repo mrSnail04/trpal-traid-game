@@ -20,3 +20,95 @@
   color:#000000;
   border: 1px solid black;
 }
+.registerButton,
+.loginButton {
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #e3e3e3;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.loginButton{
+  background: 0;
+  width: 240px;
+}
+.registerButton {
+  width: 100%;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+.loginButton span {
+  position: relative;
+  z-index: 1;
+  color: #ddd;
+  transition: 0.3s ease;
+}
+.registerButton span {
+  color: #ed2553;
+}
+.registerButton:before,
+.loginButton:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background: #ed2553;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.loginButton:hover,
+.loginButton:active,
+.loginButton:focus {
+  background: rgba(#ffffff, 0.9);
+  border-color: #ed2553;
+}
+.registerButton:hover {
+  background: rgba(#ffffff, 0.9);
+}
+.loginButton:hover span,
+.loginButton:active span,
+.loginButton:focus span {
+  color: #ed2553;
+}
+.loginButton:active span,
+.loginButton:focus span {
+  color: #ffffff;
+}
+.registerButton:active span,
+.registerButton:focus span {
+  color: #ed2553;
+}
+.loginButton:active:before,
+.loginButton:focus:before {
+  opacity: 1;
+  transform: scale(10);
+}
+.registerButton:active:before,
+.registerButton:focus:before {
+  display: none;
+}
+/* Keyframes */
+@-webkit-keyframes buttonFadeInUp {
+  0% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}
+@keyframes buttonFadeInUp {
+  0% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}
