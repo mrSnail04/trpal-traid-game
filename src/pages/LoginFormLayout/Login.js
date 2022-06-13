@@ -1,11 +1,11 @@
 import React, {useRef, useState} from "react";
 import logo from "./assets/logo.png";
 import cn from 'classnames';
-import s from "./Login.module.scss";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import Input from "../../components/Input";
 
+import s from "./Login.module.scss";
 
 const Login = () => {
     const ref = useRef(null);

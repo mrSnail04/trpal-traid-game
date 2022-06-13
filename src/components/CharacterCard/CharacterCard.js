@@ -18,7 +18,7 @@ const CharacterCard = ({
     onBiographyClick,
 }) => {
     const handleClick = () => {
-        onLikeClick &&onLikeClick(id);
+        onLikeClick && onLikeClick(id);
     };
     const handleBiography = () => {
         onBiographyClick(id);

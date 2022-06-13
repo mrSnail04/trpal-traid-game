@@ -53,13 +53,4 @@ Input.propTypes = {
     onChange: PropTypes.func,
 };
 
-Input.defaultProps = {
-    type: "text",
-    id: "#text",
-    required: "required",
-    title: "Input",
-    htmlFor: "#input",
-    name: "input",
-};
-
 export default Input;

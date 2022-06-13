@@ -1,29 +1,15 @@
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
 import CharacterCard from "../../components/CharacterCard";
-import React, {useState} from "react";
-import {CHARACTERS} from "../Biography/characters";
+import React, { useContext } from "react";
 import {useNavigate} from "react-router-dom";
+import { ContextCharacters } from "../../components/ContextCharactersProvider/ContextCharactersProvider";
 
 import s from "./Characters.module.scss";
 
-
 export const Characters = () => {
-
-    const [characters, setCharacters] = useState(CHARACTERS);
     const navigate = useNavigate();
-
-    const handleLikeClick = (id) => {
-        setCharacters((prevState) =>prevState.map(item =>{
-            if (item.id===id){
-                return {
-                    ...item,
-                    isLike: !item.isLike,
-                };
-            }
-            return item;
-        }));
-    };
+    const { characters, likeClick } = useContext(ContextCharacters)
     const handleBiographyClick = (id) => {
         navigate(`/characters/${id}`);
     };
@@ -51,7 +37,7 @@ export const Characters = () => {
                                         description={item.description}
                                         humanName={item.humanName}
                                         isLike={item.isLike}
-                                        onLikeClick={handleLikeClick}
+                                        onLikeClick={likeClick}
                                         onBiographyClick={handleBiographyClick}
                                     />
                                 </div>
